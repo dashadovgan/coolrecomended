@@ -72,14 +72,16 @@ ul {
 .navbar {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   padding: 12px;
   background-color: transparent;
   position:absolute;
   top: 0;
-  left: 15%;
+  left: 0;
   width: 100%;
   z-index: 1000;
+  position: fixed;
+  background-color: transparent;
 }
 
 
@@ -144,7 +146,8 @@ ul {
     border-radius: 0;
     padding-top: 120px; /* отступ сверху, чтобы ссылки были "вверху" */
     justify-content: flex-start; /* ссылки начинаются сверху */
-    align-items: center;          /* по горизонтали центр */
+    align-items: center;     
+      /* по горизонтали центр */
   }
 
   .nav-links.active {

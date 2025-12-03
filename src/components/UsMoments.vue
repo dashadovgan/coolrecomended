@@ -68,53 +68,26 @@
       </div>
 
       <!-- Відео -->
-      <div class="video-gallery">
-        <div class="video-item">
-          <video 
-            ref="video1" 
-            controls 
-            autoplay 
-            muted 
-            playsinline
-          ></video>
-        </div>
-      </div>
-      <p class="title">Найяскравіші та найпам'ятніші моменти осіннього семінару 2025</p>
+    <div class="video-gallery">
+  <div class="video-item">
+    <video 
+      src="/videos/video3.mp4"
+      controls
+      autoplay
+      muted
+      playsinline
+      loop
+    ></video>
+  </div>
+</div>
 
+
+      
     </div>
   </section>
 </template>
 
-<script>
-import Hls from 'hls.js';
 
-export default {
-  name: "UsMoments",
-  data() {
-    return {
-      videoSrc: '/videos/4JCdCOmi.m3u8'
-    };
-  },
-  mounted() {
-    this.setupVideo(this.$refs.video1);
-  },
-  methods: {
-    setupVideo(video) {
-      if (!video) return;
-
-      if (Hls.isSupported()) {
-        const hls = new Hls();
-        hls.loadSource(this.videoSrc);
-        hls.attachMedia(video);
-        hls.on(Hls.Events.MANIFEST_PARSED, () => video.play());
-      } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
-        video.src = this.videoSrc;
-        video.addEventListener('loadedmetadata', () => video.play());
-      }
-    }
-  }
-};
-</script>
 
 <style scoped>
 /* Фон всього блоку */
